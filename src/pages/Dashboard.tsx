@@ -41,6 +41,10 @@ export default function Dashboard() {
     navigate('/login');
   };
 
+  const handleAuditTrailClick = () => {
+    navigate('/audit-trail');
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-[#0a192f] flex items-center justify-center">
@@ -80,10 +84,13 @@ export default function Dashboard() {
               </a>
             </li>
             <li>
-              <a href="#" className="flex items-center text-gray-400 p-2 rounded hover:bg-[#1a365d]">
+              <button 
+                onClick={handleAuditTrailClick}
+                className="flex items-center text-gray-400 p-2 rounded hover:bg-[#1a365d] w-full text-left"
+              >
                 <ClipboardList className="mr-2" size={20} />
                 Audit Trail
-              </a>
+              </button>
             </li>
           </ul>
         </nav>
